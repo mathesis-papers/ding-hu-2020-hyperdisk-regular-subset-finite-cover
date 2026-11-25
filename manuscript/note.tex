@@ -1,0 +1,510 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,array,booktabs,longtable}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\C}{\mathbb C}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Span}{\operatorname{span}_{\C}}
+\newcommand{\diag}{\operatorname{diag}}
+\title{Ding--Hu, Section V, p.~8 (arXiv:1909.11256v3):\\
+negative answers to the two open finite-cover questions}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{November 3, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We answer negatively both open questions in Ding and Hu,
+\emph{Masking quantum information on hyperdisks}, Section V, p.~8,
+arXiv:1909.11256v3 (15 October 2020): the finite-cover questions for regular
+subsets of hyperdisks and for nondegenerate masking machines.
+An explicit four-coordinate example has span dimension three and requires
+continuum many contained hyperdisks, each a single ray.
+The same support obstruction gives a complete maskable set requiring
+continuum many hyperdisks for every prescribed nondegenerate marginal
+spectrum of rank $d\ge4$, at every input dimension $3\le n<d$.
+We also determine the cover cardinalities of the two degenerate examples
+in the posing paper and distinguish maximal maskable sets of density
+matrices from convex hulls of phase states.
+\end{abstract}
+
+\section{The question and the example}
+Ding and Hu's two open questions in Section V, p.~8 of
+arXiv:1909.11256v3 \cite{dinghu} concern finite hyperdisk covers of regular
+subsets and of complete maskable sets with nondegenerate marginals.
+Here and below a
+cover of a set means a union of hyperdisks \emph{contained in that set},
+as in their Eq.~(16). Allowing arbitrary supersets would make the question
+trivial. A single four-coordinate example answers both questions and
+extends to arbitrary positive marginal spectra of rank at least four.
+
+We represent a pure state by its unit vectors; a one-dimensional hyperdisk
+is therefore the full circle of representatives of one ray. Passing to
+rays gives Ding and Hu's convention. Write $\T=\{z\in\C:|z|=1\}$.
+For masking machines we follow their Section III convention: the input
+space is restricted to the complex span of its complete maskable set;
+$n$ is that dimension and $d$ is the common marginal rank.
+Their Definition~1 is the set
+\[
+ H(\phi,a)=\left\{\sum_{p=1}^m a_pu_p\phi_p:u_p\in\T\right\},
+ \qquad a_p>0,\quad \sum_pa_p^2=1,
+\]
+where the $\phi_p$ are orthonormal. Its span has dimension $m$.
+By their Definition~4, $C\subseteq S$ is regular if
+$\Span(C)\cap S=C$.
+
+Set
+\begin{equation}\label{eq:example}
+ \begin{gathered}
+ r=\frac{(1,2,3,4)}{\sqrt{30}},\qquad
+ S=\{x\in\C^4:|x_j|=r_j\ (0\le j\le3)\},\\
+ L=\{x:6x_0+3x_1+2x_2+3x_3=0\},\qquad C=L\cap S.
+ \end{gathered}
+\end{equation}
+The coordinates in $S$ already have squared norm one, and $S$ is a
+four-dimensional hyperdisk. The set $C$ is regular: $\Span(C)\subseteq L$
+gives $\Span(C)\cap S\subseteq C$, while the reverse inclusion is immediate.
+
+\begin{theorem}\label{thm:main}
+Every nonempty hyperdisk contained in $C$ has dimension one. The set $C$
+has a continuum of rays and $\Span(C)=L$, of complex dimension three.
+Consequently the least cardinality of a hyperdisk cover of $C$ is
+$\mathfrak c=|\mathbb R|$.
+\end{theorem}
+
+The phase-support argument below is also the mechanism behind the sparse
+Gramian description of subhyperdisks in Ding--Hu, Section II, Eq.~(10).
+Their Lemma~1 gives finite covers for regular subsets of span dimension
+two. The example lies in span dimension three instead. It is also distinct
+from their Eq.~(51), which uses partially degenerate marginals. The
+no-masking theorem of Modi et al.~\cite{modi} excludes masking every
+input state; the present question concerns the structure of the proper
+subset that can be masked. The original single-hyperdisk conjecture is
+different from the finite-cover question: Ding--Hu's 2019 preprint already
+gives a counterexample, and Zhu's 2021 independent argument uses real
+states \cite[Section VII, Proposition 4]{zhu}.
+
+\section{The support obstruction}
+\begin{lemma}\label{lem:modulus}
+If $|\sum_pa_pu_p|$ is constant for all independent $u_p\in\T$, then
+at most one $a_p$ is nonzero.
+\end{lemma}
+\begin{proof}
+Fix $p$ and the other phases, and write $B=\sum_{q\ne p}a_qu_q$.
+Equality of $|a_pu+B|^2$ at $u=1,-1,i,-i$ forces both real and
+imaginary parts of $a_p\overline B$ to vanish. If $a_p\ne0$, then $B=0$
+for every choice of the other phases. Comparing all phases equal to one
+with the choice $u_q=-1$ forces $2a_q=0$ for each $q\ne p$.
+\end{proof}
+
+\begin{proof}[Proof of the hyperdisk assertion in Theorem~\ref{thm:main}]
+Let $H(\phi,a)\subseteq C$, and put $v_p=a_p\phi_p$.
+Each coordinate of $\sum_pu_pv_p$ has fixed positive modulus $r_j$.
+Lemma~\ref{lem:modulus} shows that the nonempty supports
+$B_p=\{j:(v_p)_j\ne0\}$ partition $\{0,1,2,3\}$, and
+$|(v_p)_j|=r_j$ on $B_p$. The supports are nonempty because $a_p>0$
+and $\|\phi_p\|=1$.
+
+Let $\ell(x)=6x_0+3x_1+2x_2+3x_3$.
+The identity $\sum_pu_p\ell(v_p)=0$ for all phases, compared with
+one phase flipped, gives $\ell(v_p)=0$ for every $p$.
+Define
+\[
+ b_{pj}=\frac{\sqrt{30}}6 c_j(v_p)_j,\qquad (c_0,c_1,c_2,c_3)=(6,3,2,3).
+\]
+Then $\sum_jb_{pj}=0$, and the nonzero summands have moduli
+$1,1,1,2$ at coordinates $0,1,2,3$, respectively.
+
+The block containing coordinate $3$ must contain at least two of
+$0,1,2$: one summand of modulus one cannot cancel a summand of modulus
+two, and no summands cannot cancel it either. At most one coordinate
+remains outside that block. A second nonempty block would consequently
+consist of a single nonzero summand and could not have sum zero.
+There is exactly one block, so $m=1$, as required.
+\end{proof}
+
+\section{Distinct rays and the span}
+For $-3/4\le t\le-1/2$, define
+\begin{equation}\label{eq:phases}
+ \begin{gathered}
+ z=t+i\sqrt{1-t^2},\quad w=-2-z,\quad
+ q=5+4t,\quad k=\sqrt{\frac{4-q}{q}},\\
+ u(t)=\left(z,\frac{w(1+ik)}2,\frac{w(1-ik)}2,1\right).
+ \end{gathered}
+\end{equation}
+Here $2\le q\le3$, so every square root is real and the denominator is
+positive. We have $|z|^2=1$, $|w|^2=q$, and
+\[
+ \left|\frac{w(1\pm ik)}2\right|^2
+ =\frac{q(1+k^2)}4=1,\qquad u_0(t)+u_1(t)+u_2(t)+2u_3(t)=0.
+\]
+Thus $x(t)=(r_ju_j(t))_{j=0}^3\in C$.
+If $x(t)=\alpha x(t')$, the fixed nonzero fourth coordinate forces
+$\alpha=1$. The real part of the first coordinate then forces $t=t'$.
+The interval therefore injects into the rays of $C$. There are at most
+continuum many such rays because $C\subseteq\C^4$, so there are exactly
+continuum many. Each hyperdisk contained in $C$ covers one ray, while
+all singleton rays are hyperdisks. This proves the exact cover cardinality.
+
+For completeness, the span is exactly the displayed hyperplane.
+Put $\omega=(-1+i\sqrt3)/2$ and let $D=\diag(r_0,r_1,r_2,r_3)$.
+The three vectors
+\begin{equation}\label{eq:basis}
+ D(-1,\omega,\overline\omega,1),\qquad
+ D(-1,\overline\omega,\omega,1),\qquad
+ D(\omega,-1,\overline\omega,1)
+\end{equation}
+belong to $C$ since $\omega+\overline\omega=-1$.
+In a linear dependence with coefficients $\alpha,\beta,\gamma$,
+the fourth coordinate gives $\alpha+\beta+\gamma=0$ and the first gives
+$(1+\omega)\gamma=0$. Hence $\gamma=0$ and $\beta=-\alpha$.
+The second coordinate then gives $(\omega-\overline\omega)\alpha=0$,
+so all coefficients vanish. These vectors are independent, and
+$\dim_{\C}L=3$, completing the proof of Theorem~\ref{thm:main}.
+
+\begin{corollary}\label{cor:old-bound}
+The proposed span-dimension upper bound in Ding--Hu,
+arXiv:1909.11256v1, Section V, p.~6 (25 September 2019), is false:
+a regular subset of span dimension three can require $\mathfrak c$
+contained hyperdisks.
+\end{corollary}
+\begin{proof}
+Apply Theorem~\ref{thm:main} to $C$ in Eq.~\eqref{eq:example}.
+\end{proof}
+
+\begin{corollary}\label{cor:minimal}
+Four is the smallest ambient hyperdisk dimension admitting a regular
+subset without a finite cover by contained hyperdisks.
+For nondegenerate masking machines, the smallest input dimension and
+marginal rank allowing such a cover obstruction are $n=3$ and $d=4$.
+\end{corollary}
+\begin{proof}
+For an ambient hyperdisk of dimension at most three, a regular subset
+of the same span dimension is the whole hyperdisk, by Ding--Hu Eq.~(15).
+One of span dimension two is a hyperdisk or two rays, by their Lemma~1.
+A nonempty subset of span dimension one is a single ray, since regularity
+includes all its unit representatives. A subset of span dimension zero
+is empty and has the empty cover. These cases exhaust the possibilities.
+For nondegenerate masking, the complete target set is a regular subset
+of a $d$-dimensional Schmidt hyperdisk by Ding--Hu Eqs.~(26)--(29).
+Lemma~1 also excludes any obstruction of span dimension at most two,
+regardless of $d$. Corollary~\ref{cor:masker} attains $(n,d)=(3,4)$.
+\end{proof}
+
+\section{A nondegenerate masking machine}
+\begin{corollary}\label{cor:masker}
+There is a masking machine with input dimension $n=3$ and Schmidt
+number $d=4$, whose complete maskable set has no finite or countable
+hyperdisk cover, although its fixed marginal states are nondegenerate.
+\end{corollary}
+\begin{proof}
+Take the input Hilbert space to be $L$ with its inherited inner product,
+and define the isometry
+\[
+ V:L\longrightarrow\C^4\otimes\C^4,\qquad
+ Vx=\sum_{j=0}^3x_j|j\rangle|j\rangle.
+\]
+For every unit $x\in L$, either partial trace of $|Vx\rangle\langle Vx|$
+is $\diag(|x_0|^2,|x_1|^2,|x_2|^2,|x_3|^2)$; the off-diagonal
+terms disappear because $\langle j|k\rangle=0$ for $j\ne k$.
+Both marginals equal
+\[
+ \rho=\frac1{30}\diag(1,4,9,16)
+\]
+if and only if $x\in L\cap S=C$. Thus $C$ is the \emph{complete}
+maskable input set, satisfying both clauses of Ding--Hu Definition~5,
+not merely a selected subset. The eigenvalues of $\rho$ are positive
+and pairwise distinct, so $d=4$ and the marginals are nondegenerate.
+By Theorem~\ref{thm:main}, the input dimension is three. An isometry
+preserves inner products and spans, hence takes hyperdisks to hyperdisks
+and does so in reverse on its image. The same cover obstruction holds
+for the target set $V(C)$. This proves the negative answer to the first
+question of Ding--Hu Section V.
+\end{proof}
+
+\begin{corollary}\label{cor:spectra}
+Let $d\ge4$ and $r_j>0$ with $\sum_{j=0}^{d-1}r_j^2=1$. Set
+\[
+ S_d=\{x\in\C^d:|x_j|=r_j\},\qquad
+ L_d=\left\{x:\frac{x_0}{r_0}+\frac{x_1}{r_1}
+                 +\frac{x_2}{r_2}+\frac{2x_3}{r_3}=0\right\}.
+\]
+Then $C_d=L_d\cap S_d$ is regular, spans $L_d$, and its least
+hyperdisk-cover cardinality is $\mathfrak c$.
+The isometry $x\mapsto\sum_jx_j|jj\rangle$ on $L_d$ has complete maskable
+set $C_d$ for marginals $\diag(r_0^2,\ldots,r_{d-1}^2)$ and input dimension
+$d-1$. In particular, every nondegenerate rank-$d$ spectrum occurs.
+More generally, for every $3\le n<d$, the subspace
+\[
+ L_{d,n}=\left\{x\in L_d:
+       \frac{x_j}{r_j}=\frac{x_3}{r_3}\quad(n+1\le j\le d-1)\right\}
+\]
+has dimension $n$, and $L_{d,n}\cap S_d$ has the same cover cardinality
+and complete masking realization. Hence the pairs $(n,d)$ admitting a
+nondegenerate masking machine without a finite hyperdisk cover are
+exactly $3\le n<d$.
+\end{corollary}
+\begin{proof}
+Regularity follows as in Eq.~\eqref{eq:example}. For $d=4$, diagonal
+rescaling of the phase vectors in Eqs.~\eqref{eq:phases} and
+\eqref{eq:basis} proves the continuum and span assertions for any $r$.
+For $d>4$, append fixed phases in the remaining coordinates. Flipping
+one of these phases and subtracting the two resulting vectors gives
+a nonzero multiple of its coordinate vector. Together with the three
+rescaled vectors in Eq.~\eqref{eq:basis}, these give $d-1$ independent
+directions in $L_d$.
+
+For a hyperdisk $H\subseteq C_d$, Lemma~\ref{lem:modulus} again assigns
+each coordinate to exactly one phase generator. Every generator satisfies
+the defining linear equation of $L_d$. Among the first four coordinates,
+the block containing coordinate $3$ needs at least two unit-weight
+coordinates; any remaining coordinate cannot form another zero-sum block.
+Thus all four coordinates belong to one generator. Projection of $H$
+onto the first four coordinates is therefore contained in a single ray.
+The rescaled family in Eq.~\eqref{eq:phases}, with fixed appended phases,
+has continuum many different projected rays. Each contained hyperdisk
+covers at most one member of this family, so any cover has cardinality
+at least $\mathfrak c$. Singleton-ray hyperdisks give the reverse bound
+because $C_d\subseteq\C^d$. The marginal calculation in
+Corollary~\ref{cor:masker} applies without change.
+
+For $L_{d,n}$, keep coordinates $4,\ldots,n$ free and tie every later
+coordinate to coordinate $3$ as displayed. The three phase vectors and
+the sign-flip differences in the $n-3$ free coordinates span an
+$n$-dimensional subspace; the constraints give the matching upper bound.
+The continuum family still satisfies the ties. Every contained hyperdisk
+is contained in $C_d$, so the projected-ray obstruction and cover
+cardinality persist. Finally, Ding--Hu Lemma~1 excludes $n\le2$,
+Eqs.~(26)--(29) give $n\le d$ in the nondegenerate case, and equality
+$n=d$ gives the whole Schmidt hyperdisk. These prove the necessity.
+\end{proof}
+
+\section{Consequences for the degenerate examples}
+The nondegenerate construction shows that degeneracy is not necessary
+for an infinite least cover cardinality. Ding--Hu already exhibited
+degenerate examples in Eqs.~(36) and (51); their precise cover
+cardinalities follow as well.
+
+\begin{corollary}\label{cor:degenerate}
+Each complete target set in Ding--Hu Eqs.~(36) and (51) has least
+hyperdisk-cover cardinality $\mathfrak c$. The latter has no contained
+hyperdisk of dimension greater than one, as stated in that paper.
+\end{corollary}
+\begin{proof}
+For Eq.~(51), take $\lambda_1,\lambda_2>0$ with
+$2\lambda_1+\lambda_2=1$ and $\lambda_1\ne\lambda_2$.
+In the orthonormal basis
+\[
+ |00\rangle,\quad |11\rangle,\quad
+ \frac{i\sqrt{\lambda_1/2}(|01\rangle+|10\rangle)
+             +\sqrt{\lambda_2}|22\rangle}{\sqrt{\lambda_1+\lambda_2}},
+\]
+its representatives have coefficients
+$(ae^{i\eta},ae^{-i\eta},b)$, up to a common phase, where
+$a=\sqrt{\lambda_1/2}$ and $b=\sqrt{\lambda_1+\lambda_2}$.
+They satisfy $x_0x_1=(a^2/b^2)x_2^2$ and have fixed positive moduli.
+For any contained hyperdisk, the disjoint-support lemma assigns
+coordinates $0,1,2$ to generators $p_0,p_1,p_2$.
+Independent phase variation in this quadratic identity forces
+$u_{p_0}u_{p_1}=u_{p_2}^2$ for all phases, hence
+$p_0=p_1=p_2$. There is one generator. The fixed nonzero third
+coefficient distinguishes continuum many rays as $\eta$ ranges over
+$[0,2\pi)$, proving the assertion for Eq.~(51).
+
+For Eq.~(36), use its target span
+$W=\Span\{|00\rangle,|11\rangle,|01\rangle+|10\rangle\}$.
+Every hyperdisk contained in its maximally entangled target set has
+dimension at most two. Indeed, write its weighted orthonormal generators
+as $2\times2$ coefficient matrices $A_p$, with $*$ denoting conjugate
+transpose. Constant marginals for all
+independent phases force $A_pA_q^*=A_p^*A_q=0$ for $p\ne q$, by the
+coefficients of $u_p\overline{u_q}$. Thus the nonzero ranges of $A_p$
+are pairwise orthogonal in $\C^2$.
+The orthonormal vectors
+\[
+ f_0=\frac{i(|00\rangle+|11\rangle)}{\sqrt2},\quad
+ f_1=\frac{|00\rangle-|11\rangle}{\sqrt2},\quad
+ f_2=\frac{|01\rangle+|10\rangle}{\sqrt2}
+\]
+give a continuum of target rays
+$[f_0+t f_1+t^2 f_2]$ for $t\in\mathbb R$: normalization divides by
+$\sqrt{1+t^2+t^4}$, and either marginal is $I/2$.
+Any complex subspace of $W$ of dimension at most two is annihilated
+by a nonzero linear functional. On this family its value is a nonzero
+polynomial of degree at most two, so it vanishes at at most two parameters.
+Every contained hyperdisk covers at most two of these rays.
+A family of fewer than $\mathfrak c$ such finite intersections cannot
+cover $\mathbb R$; singleton rays again give the matching upper bound.
+\end{proof}
+
+\section{A related maximality question}
+Zhu's Section VII, Conjecture~1 \cite{zhu}, concerns the \emph{convex hull}
+of the pure phase states, not the finite-cover question. Its distinction
+from the full fixed-diagonal set matters in dimension four and above.
+The fixed-diagonal set was already characterized as the complete maskable
+set of the diagonal isometry in the April 2020 preprint of
+Du et al.\ \cite[arXiv version, Theorem 3.2]{du}.
+The convex-geometric ingredients are the classical correlation-matrix
+rank bound and construction of Li and Tam
+\cite[Theorem 1, Corollary 2 and Section 2.1]{litam}; the proof below
+specializes them explicitly.
+For a positive normalized vector $r$, write
+\[
+ \mathcal D_r=\{\sigma\ge0:\diag(\sigma)=(r_j^2)_j\},\qquad
+ \mathcal P_r=\{|x\rangle\langle x|:|x_j|=r_j\}.
+\]
+\begin{corollary}\label{cor:maximal}
+The set $\mathcal D_r$ is maximal maskable among density matrices on
+$\C^d$. The convex hull of $\mathcal P_r$ equals $\mathcal D_r$ for
+$d\le3$ and is a proper subset for every $d\ge4$.
+Consequently Zhu's Conjecture~1 holds for $d=2,3$ and is false for $d\ge4$;
+the corrected maximal set is $\mathcal D_r$.
+\end{corollary}
+\begin{proof}
+The isometry $V:\C^d\to\C^d\otimes\C^d$ defined on the full input
+space by $V|j\rangle=|jj\rangle$ masks $\mathcal D_r$.
+For any isometry masking $\mathcal P_r$, let $A_j$
+be the coefficient matrix of the image of $|j\rangle$.
+Fourier coefficients of either constant marginal give
+$A_jA_k^*=A_j^*A_k=0$ for $j\ne k$, since $r_jr_k>0$.
+Thus $B_j=A_jA_j^*$ are nonzero, pairwise orthogonal positive matrices,
+and the first marginal of an arbitrary input $\sigma$ is
+$\sum_j\sigma_{jj}B_j$. It equals $\sum_jr_j^2B_j$ only if
+$\sigma_{jj}=r_j^2$ for every $j$, as multiplication by $B_j$ and
+taking traces shows. Hence no masker of $\mathcal P_r$, and therefore
+none of $\mathcal D_r$, can include a state outside $\mathcal D_r$.
+
+Write $D=\diag(r)$ and $\sigma=DGD$; then $G\ge0$ has diagonal one.
+If $G=UU^*$ has rank $s\ge2$ and $d\le3$, the $s^2$-dimensional real
+space of Hermitian $s\times s$ matrices contains a nonzero $Q$ with
+$u_jQu_j^*=0$ for every row $u_j$ of $U$, since $s^2>d$.
+The rows span $\C^s$, so $Q$ is neither positive nor negative
+semidefinite. Moving $I+\epsilon Q$ in both directions to its two
+positive-semidefinite endpoints decomposes $G$ into a convex combination
+of two smaller-rank matrices with diagonal one. Induction reduces to
+rank-one phase matrices. This proves the equality for $d\le3$.
+
+For $d\ge4$, let the first four rows of $U$ be
+\[
+ (1,0),\quad(0,1),\quad(1,1)/\sqrt2,\quad(1,i)/\sqrt2,
+\]
+and let every further row be $(1,0)$. Then $\sigma=DUU^*D\in\mathcal D_r$.
+If $\sigma$ were a convex combination of elements
+$|x\rangle\langle x|\in\mathcal P_r$, positivity would put every such
+$x$ in $\operatorname{range}(DU)$. Write $x=DU(a,b)^T$.
+The first two coordinate moduli give $|a|=|b|=1$; the next two give
+$|a+b|^2=|a+ib|^2=2$. Hence both real and imaginary parts of
+$a\overline b$ vanish, contradicting $|a\overline b|=1$.
+Thus $\sigma$ lies outside that convex hull, which is consequently
+not maximal maskable.
+\end{proof}
+
+\section{Coverage and verification}
+The coverage uses the source's span-dimension convention for hyperdisks.
+The two open questions are refuted; the other entries below identify
+proved consequences or the earlier results used for comparison.
+{\small
+\begin{longtable}{@{}p{.34\linewidth}p{.60\linewidth}@{}}
+\toprule Source item & Status and conclusion \\\midrule\endhead
+Ding--Hu Section V, p.~8, second open question; Eq.~(16) &
+Refuted-and-corrected: Theorem~\ref{thm:main} gives optimal cardinality
+$\mathfrak c$, not a finite cover.\\
+Section V, first open question &
+Refuted-and-corrected: Corollaries~\ref{cor:masker} and \ref{cor:spectra}
+give nondegenerate examples for every rank $d\ge4$ and prescribed spectrum.\\
+arXiv:1909.11256v1, Section V, p.~6, proposed dimension bound &
+Refuted-and-corrected: Corollary~\ref{cor:old-bound} gives span dimension
+three and least cover cardinality $\mathfrak c$.\\
+The same v1 conclusion, question on mixed-state structure &
+Not covered as a general classification. Du et al.\ \cite{du}
+characterize the diagonal-isometry case; Corollary~\ref{cor:maximal}
+determines its maximality among density matrices.\\
+Section II, Eq.~(10), Lemma~1 and Eq.~(15) &
+Prior proof cited: disjoint supports and the low-dimensional classification.
+Proved consequence: sharp dimensions in Corollary~\ref{cor:minimal}.\\
+Section III A, Eqs.~(30)--(32); original single-hyperdisk conjecture &
+Prior proof cited: Ding--Hu's counterexample, already in the 2019 preprint;
+Zhu's 2021 version supplies a later independent real-state argument.\\
+Section III B, Eq.~(36); Section IV, Eq.~(51) &
+Prior proof cited for the examples; proved exact cover cardinalities
+in Corollary~\ref{cor:degenerate}.\\
+Section IV, Theorem~1; Theorem~2 and Eq.~(50) &
+Prior proof cited: qubit classification, conditional $n=d=3$ classification,
+and three-ray example. Their statements are unchanged.\\
+Zhu Section VII, Conjecture~1, arXiv:2010.07843v2, p.~9 &
+Refuted-and-corrected for $d\ge4$, proved for $d=2,3$:
+Corollary~\ref{cor:maximal} distinguishes convex phase hulls and
+fixed-diagonal maximal sets.\\
+Du et al., arXiv:2004.14572v1, Theorem 3.2; Li--Tam, Theorem 1,
+Corollary 2 and Section 2.1 &
+Prior proof cited: fixed-diagonal maskability (2020), correlation-matrix
+rank bound and explicit rank-two construction (1994).\\
+\bottomrule
+\end{longtable}}
+
+The pinned Lean source is
+\href{https://github.com/the-omega-institute/trureturing/blob/01b573fd9b691a4be3a8b0ecbb41b3311eda19b5/D5/S3/Quantum/Masking/HyperdiskRegularSubsetCover.lean}{\texttt{HyperdiskRegularSubsetCover.lean}}.
+Its declarations lie in the namespace
+\begin{center}\small
+\texttt{D5.S3.Quantum.Masking.HyperdiskRegularSubsetCover}.
+\end{center}
+Here \texttt{IsHyperdisk} and \texttt{IsRegularSubset} encode the definitions
+above, \texttt{claim} is the universal finite-cover assertion, and the
+public declaration \texttt{result} proves \(\neg\texttt{claim}\).
+The file's auxiliary \texttt{phases\_unit} establishes phase membership
+throughout the displayed interval; \texttt{family\_ray\_injective} separates
+the countable family at $t_n=-1/2-1/(4(n+1))$; and
+\texttt{hyperdisk\_single\_ray} places any two members of a contained
+hyperdisk on the same ray. These are local auxiliary lemmas in the pinned
+file.
+
+The continuum cardinality, explicit span equality, minimal dimensions,
+all masking realizations, degenerate comparisons and maximality assertions
+have written proofs here. The accompanying \texttt{verify.py} checks
+all 15 four-coordinate support partitions, exact phase identities at
+32 rational parameters, a nonzero span minor, finite arbitrary-spectrum
+examples, and the four-row rank-two matrix used in
+Corollary~\ref{cor:maximal}. The finite checks complement, rather than
+replace, the arguments for all parameters and dimensions.
+
+\paragraph{License.} This note is licensed under Creative Commons
+Attribution 4.0 International (CC BY 4.0).
+
+\begin{thebibliography}{9}
+\bibitem{dinghu}
+F. Ding and X. Hu, \emph{Masking quantum information on hyperdisks},
+Phys. Rev. A \textbf{102}, 042404 (2020),
+\href{https://doi.org/10.1103/PhysRevA.102.042404}{doi:10.1103/PhysRevA.102.042404}.
+\href{https://arxiv.org/abs/1909.11256v3}{arXiv:1909.11256v3},
+Definitions 1, 4 and 5, Lemma 1, and Section V, p.~8.
+\bibitem{modi}
+K. Modi, A. K. Pati, A. Sen(De), and U. Sen,
+\emph{Masking quantum information is impossible},
+Phys. Rev. Lett. \textbf{120}, 230501 (2018),
+\href{https://doi.org/10.1103/PhysRevLett.120.230501}{doi:10.1103/PhysRevLett.120.230501}.
+\bibitem{zhu}
+H. Zhu, \emph{Hiding and masking quantum information in complex and real
+quantum mechanics}, Phys. Rev. Research \textbf{3}, 033176 (2021),
+\href{https://doi.org/10.1103/PhysRevResearch.3.033176}{doi:10.1103/PhysRevResearch.3.033176}.
+\href{https://arxiv.org/abs/2010.07843v2}{arXiv:2010.07843v2},
+Section VII, p.~9, Conjecture~1 and Propositions 3--4.
+\bibitem{du}
+Y. Du, Z. Guo, H. Cao, K. Han and C. Yang,
+\emph{Masking quantum information encoded in pure and mixed states},
+Int. J. Theor. Phys. \textbf{60}, 2380--2399 (2021; online 26 July 2020),
+\href{https://doi.org/10.1007/s10773-020-04542-w}{doi:10.1007/s10773-020-04542-w}.
+\href{https://arxiv.org/abs/2004.14572v1}{arXiv:2004.14572v1}
+(30 April 2020), Theorem 3.2; the preprint lists Cao first.
+\bibitem{litam}
+C.-K. Li and B.-S. Tam, \emph{A note on extreme correlation matrices},
+SIAM J. Matrix Anal. Appl. \textbf{15}, 903--908 (1994),
+\href{https://doi.org/10.1137/S0895479892240683}{doi:10.1137/S0895479892240683}.
+\href{https://cklixx.people.wm.edu/corr.pdf}{Author-hosted text},
+Theorem 1, Corollary 2 and Section 2.1, pp.~904--905.
+\end{thebibliography}
+\end{document}

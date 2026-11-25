@@ -1,0 +1,15 @@
+{
+  "id": "ding-hu-2020-hyperdisk-regular-subset-finite-cover",
+  "revision": 2,
+  "problem_ids": ["ding-hu-2020-hyperdisk-regular-subset-finite-cover"],
+  "topic": "Ding–Hu Section V finite hyperdisk covers, arbitrary masking spectra, and related maximal maskability",
+  "title": "Ding–Hu, Section V, p. 8 (arXiv:1909.11256v3): negative answers to the two open finite-cover questions",
+  "creators": [
+    {"name": "Haobo Ma", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Wenlin Zhang", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "We answer negatively both open questions in Ding and Hu, Masking quantum information on hyperdisks, Section V, p. 8, arXiv:1909.11256v3 (15 October 2020): the finite-cover questions for regular subsets of hyperdisks and for nondegenerate masking machines. An explicit four-coordinate example has span dimension three and requires continuum many contained hyperdisks, each a single ray. The same support obstruction gives a complete maskable set requiring continuum many hyperdisks for every prescribed nondegenerate marginal spectrum of rank d >= 4, at every input dimension 3 <= n < d. We also determine the cover cardinalities of the two degenerate examples in the posing paper and distinguish maximal maskable sets of density matrices from convex hulls of phase states.",
+  "summary": "The dimension pairs admitting nondegenerate masking machines without finite hyperdisk covers are exactly 3 <= n < d; every prescribed nondegenerate rank-d spectrum admits an example with least contained-hyperdisk cover cardinality continuum.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/01b573fd9b691a4be3a8b0ecbb41b3311eda19b5/D5/S3/Quantum/Masking/HyperdiskRegularSubsetCover.lean"
+}

@@ -1,0 +1,161 @@
+{
+  "arithmetic": "Exact rational arithmetic in a real two-square-root algebra with i^2=-1",
+  "independent_span_vectors": 3,
+  "linear_constraint": "6*x0+3*x1+2*x2+3*x3=0",
+  "marginal_spectrum": [
+    "1/30",
+    "2/15",
+    "3/10",
+    "8/15"
+  ],
+  "normalized_minor_squared_modulus": "8/1125",
+  "parameter_formula": "t_n=-1/2-1/(4(n+1)), 0<=n<32",
+  "partitions_satisfying_all_necessary_polygon_inequalities": 1,
+  "phase_moduli_squared": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "rational_parameters_checked": 32,
+  "result": "all checks passed",
+  "scope": "Finite support cases, exact algebraic examples, spectrum extensions and matrix identities; the all-parameter, all-dimension and cover-cardinality conclusions have written proofs in note.tex.",
+  "siblings": {
+    "arbitrary_spectrum_dimensions_checked": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "correlation_witness_diagonal": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "correlation_witness_rank": 2,
+    "degenerate_example_parameters_checked_each": 17,
+    "eq36_unnormalized_marginals": "(1+t^2+t^4)*I_2",
+    "eq51_unnormalized_marginals": "diag(2,2,4); normalization squared 8",
+    "hermitian_constraint_determinant": "1",
+    "input_dimension_marginal_rank_pairs_checked": [
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        9,
+        10
+      ]
+    ]
+  },
+  "support_partitions": 15,
+  "unnormalized_norm_squared": 30
+}
