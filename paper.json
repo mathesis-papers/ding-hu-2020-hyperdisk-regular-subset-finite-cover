@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.23970197",
     "current_version": 2,
     "doi": "10.5281/zenodo.23970198",
+    "kind": "note",
     "lean_source": {
       "revision": "01b573fd9b691a4be3a8b0ecbb41b3311eda19b5",
       "url": "https://github.com/the-omega-institute/trureturing/blob/01b573fd9b691a4be3a8b0ecbb41b3311eda19b5/D5/S3/Quantum/Masking/HyperdiskRegularSubsetCover.lean"
@@ -55,10 +56,12 @@
     "title": "Ding–Hu, Section V, p. 8 (arXiv:1909.11256v3): negative answers to the two open finite-cover questions",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-25T19:58:35.274765662Z",
         "revision": "2",
-        "version": 2
+        "version": 2,
+        "version_label": null
       }
     ],
     "work": "ding-hu-2020-hyperdisk-regular-subset-finite-cover"
